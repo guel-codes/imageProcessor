@@ -1,6 +1,7 @@
 import Jimp from 'jimp';
 import path from 'path';
 import fs from 'fs';
+import { error } from 'console';
 
 const ImageResize = async (
   width: number,
@@ -20,7 +21,7 @@ const ImageResize = async (
     }
     return { success: true, result: newFileName };
   } catch (err) {
-    return { success: false, result: 'err' };
+    return { success: false, result: "error" };
   }
 };
 

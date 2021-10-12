@@ -21,7 +21,7 @@ const ImageResize = async (
     }
     return { success: true, result: newFileName };
   } catch (err) {
-    return { success: false, result: "error" };
+    return { success: false, result: "error check photo dimensions" };
   }
 };
 

@@ -13,11 +13,11 @@ const ImageResize = async (
       path.join('./assets', 'full', filename + '.jpg')
     );
     const newFileName = `${filename}_${width}_${height}.${image.getExtension()}`;
-    if (!fs.existsSync(path.join('./assets', 'thumb', newFileName))) {
+    if (!fs.existsSync(path.join('./assets', 'thumbnails', newFileName))) {
       console.log('creating resized image');
       await image
         .resize(width, height, Jimp.RESIZE_BEZIER)
-        .writeAsync(path.join('./assets', 'thumb', newFileName));
+        .writeAsync(path.join('./assets', 'thumbnails', newFileName));
     }
     return { success: true, result: newFileName };
   } catch (err) {

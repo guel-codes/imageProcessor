@@ -10,7 +10,7 @@ images.get('/', async (req: express.Request, res: express.Response) => {
   const filename = req.query.filename as string;
   const resizeOp = await ImageResize(width, height, filename);
   if (resizeOp.success) {
-    res.sendFile(resizeOp.result, { root: path.join('./assets', 'thumb') });
+    res.sendFile(resizeOp.result, { root: path.join('./assets', 'thumbnails') });
   } else {
     res.send(resizeOp.result);
   }

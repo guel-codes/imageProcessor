@@ -10,7 +10,7 @@ app.use('/api/images', requestValidator, images);
 app.use('/api*', help);
 
 app.listen(port, () =>{
-    console.log(`Server is listening on oort ${port}`)
+    console.log(`Server is listening on port ${port}/api`)
 });
 
 export default app;

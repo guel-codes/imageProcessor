@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import supertest from 'supertest';
 import app from '../index';
 import path from 'path';

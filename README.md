@@ -1,5 +1,7 @@
 # Image Processing API
-
+This project is a image processing API. Start up the project with the instructions below. 
+Once you have navigated to localhost:3000/api and put in a query you will be able to resize the images.
+After the image is resized it will be pushed to a thumbnails folder in your local directory.
 
 ## Running the Project
 > npm run build compiles the application <br>

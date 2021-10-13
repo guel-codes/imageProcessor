@@ -6,16 +6,15 @@ import fs from 'fs';
 
 const request = supertest(app);
 describe('Test endpoint responses', () => {
-  const testWidth = 200;
-  const testHeight = 200;
-  const testFilename = 'fjord';
-  const imgName = `${testFilename}_${testWidth}_${testHeight}.jpg`;
-  const imgPath = path.join('./assets', 'thumb', imgName);
+  const testWidth = 300;
+  const testHeight = 300;
+  const testFilename = 'santamonica';
+  const imageName = `${testFilename}_${testWidth}_${testHeight}.jpeg`;
+  const imagePath = path.join('./assets', 'thumbnails', imageName);
 
   beforeAll(async () => {
-    // delete an img that can be used for testing
-    if (fs.existsSync(imgPath)) {
-      fs.unlinkSync(imgPath);
+    if (fs.existsSync(imagePath)) {
+      fs.unlinkSync(imagePath);
     }
   });
 
@@ -25,11 +24,11 @@ describe('Test endpoint responses', () => {
   });
 
   it('tests valid request to api', async () => {
-    expect(fs.existsSync(imgPath)).toBeFalse();
+    expect(fs.existsSync(imagePath)).toBeFalse();
     const response = await request.get(
       `/api/images?filename=${testFilename}&width=${testWidth}&height=${testHeight}`
     );
     expect(response.status).toBe(200);
-    expect(fs.existsSync(imgPath)).toBeTrue();
+    expect(fs.existsSync(imagePath)).toBeTrue();
   });
 });

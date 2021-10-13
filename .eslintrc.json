@@ -17,7 +17,8 @@
             "error",
             {
                 "functions": true,
-                "classes": true
+                "classes": true,
+                "endOfLine": "auto"
             }
         ],
         "no-var": "error",

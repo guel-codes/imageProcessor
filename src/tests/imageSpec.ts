@@ -10,7 +10,7 @@ describe('Test image resize function', () => {
   const imgPath = path.join(
     './assets',
     'thumb',
-    `${testFilename}_${testWidth}_${testHeight}.jpeg`
+    `${testFilename}_${testWidth}_${testHeight}.jpg`
   );
 
   beforeAll(async () => {
